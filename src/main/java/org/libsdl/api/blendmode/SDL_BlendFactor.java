@@ -20,7 +20,7 @@ public final class SDL_BlendFactor implements JnaEnum {
     private SDL_BlendFactor() {
     }
 
-    public static class Ref extends IntByReference {
+    public static final class Ref extends IntByReference {
 
         public Ref() {
         }

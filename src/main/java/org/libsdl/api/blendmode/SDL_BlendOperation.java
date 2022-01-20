@@ -15,7 +15,7 @@ public final class SDL_BlendOperation implements JnaEnum {
     private SDL_BlendOperation() {
     }
 
-    public static class Ref extends IntByReference {
+    public static final class Ref extends IntByReference {
 
         public Ref() {
         }

@@ -15,7 +15,7 @@ import static org.libsdl.api.gamecontroller.SDL_GameControllerBindType.SDL_CONTR
         "bindType",
         "value"
 })
-public class SDL_GameControllerButtonBind extends Structure {
+public final class SDL_GameControllerButtonBind extends Structure {
 
     @MagicConstant(valuesFromClass = SDL_GameControllerBindType.class)
     public int bindType;

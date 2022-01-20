@@ -1,6 +1,6 @@
 package org.libsdl.api.hints;
 
-public class SdlHintsConst {
+public final class SdlHintsConst {
 
     public static final String SDL_HINT_ACCELEROMETER_AS_JOYSTICK = "SDL_ACCELEROMETER_AS_JOYSTICK";
 
