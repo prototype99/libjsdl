@@ -153,7 +153,7 @@ public final class SdlAudio {
         return NativeFunctions.SDL_LoadWAV_RW(SDL_RWFromFile(file, "rb"), 1, spec, audio_buf, audio_len);
     }
 
-    private final static class NativeFunctions {
+    private static final class NativeFunctions {
 
         static {
             NativeLoader.registerNativeMethods(NativeFunctions.class);

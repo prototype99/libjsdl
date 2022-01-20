@@ -49,6 +49,6 @@ public class SDL_PixelFormat extends Structure {
     public int refcount;
     public Pointer next;
 
-    public final static class ByReference extends SDL_PixelFormat implements Structure.ByReference {
+    public static final class ByReference extends SDL_PixelFormat implements Structure.ByReference {
     }
 }
