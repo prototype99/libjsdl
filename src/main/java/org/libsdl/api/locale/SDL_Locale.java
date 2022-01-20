@@ -9,13 +9,13 @@ import com.sun.jna.Structure;
 })
 public class SDL_Locale extends Structure {
 
+    public String country;
+    public String language;
+
     public SDL_Locale() {
     }
 
     public SDL_Locale(Pointer p) {
         super(p);
     }
-
-    public String language;
-    public String country;
 }

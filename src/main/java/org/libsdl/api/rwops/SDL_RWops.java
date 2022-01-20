@@ -50,13 +50,6 @@ public final class SDL_RWops extends Structure {
      */
     public static final int SDL_RWOPS_VITAFILE = 6;
 
-    public SDL_RWops() {
-    }
-
-    public SDL_RWops(Pointer p) {
-        super(p);
-    }
-
     public SDL_RWSizeFunction size;
     public SDL_RWSeekFunction seek;
     public SDL_RWReadFunction read;
@@ -65,6 +58,13 @@ public final class SDL_RWops extends Structure {
     @MagicConstant(valuesFromClass = SDL_RWops.class)
     public int type;
     public SDL_RWopsPlatformSpecific hidden;
+
+    public SDL_RWops() {
+    }
+
+    public SDL_RWops(Pointer p) {
+        super(p);
+    }
 
     @Override
     public void read() {
