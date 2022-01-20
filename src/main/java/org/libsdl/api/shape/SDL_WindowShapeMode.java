@@ -24,17 +24,17 @@ public class SDL_WindowShapeMode extends Structure {
     @Override
     public void read() {
         readField("mode");
-        switch (mode) {
+        switch (this.mode) {
             case SHAPE_MODE_DEFAULT:
             case SHAPE_MODE_BINARIZE_ALPHA:
             case SHAPE_MODE_REVERSE_BINARIZE_ALPHA:
-                parameters.setType("binarizationCutoff");
+                this.parameters.setType("binarizationCutoff");
                 break;
             case SHAPE_MODE_COLOR_KEY:
-                parameters.setType("colorKey");
+                this.parameters.setType("colorKey");
                 break;
             default:
-                throw new IllegalStateException("Unknown mode " + mode);
+                throw new IllegalStateException("Unknown mode " + this.mode);
         }
         super.read();
     }

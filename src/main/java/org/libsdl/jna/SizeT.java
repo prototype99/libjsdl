@@ -44,7 +44,7 @@ public class SizeT extends IntegerType {
 
         public Ref(SizeT initialValue) {
             super(SizeT.size);
-            setValue(initialValue);
+            this.setValue(initialValue);
         }
 
         @SuppressWarnings("checkstyle:MagicNumber")

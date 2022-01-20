@@ -21,7 +21,7 @@ public final class SDL_MessageBoxColorScheme extends Structure implements Struct
     public void setColorFor(
             @MagicConstant(valuesFromClass = SDL_MessageBoxColorType.class) int key,
             SDL_MessageBoxColor value) {
-        colors[key] = value;
+        this.colors[key] = value;
     }
 
     public void setColorFor(
@@ -29,6 +29,6 @@ public final class SDL_MessageBoxColorScheme extends Structure implements Struct
             int red,
             int green,
             int blue) {
-        colors[key] = new SDL_MessageBoxColor(red, green, blue);
+        this.colors[key] = new SDL_MessageBoxColor(red, green, blue);
     }
 }

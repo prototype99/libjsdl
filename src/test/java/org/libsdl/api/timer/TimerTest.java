@@ -25,7 +25,7 @@ public final class TimerTest {
     @BeforeEach
     public void setUp() {
         SDL_InitSubSystem(SDL_INIT_TIMER);
-        numOfAllocationsBefore = SDL_GetNumAllocations();
+        this.numOfAllocationsBefore = SDL_GetNumAllocations();
     }
 
     @Test
@@ -36,7 +36,7 @@ public final class TimerTest {
         int time2 = SDL_GetTicks();
         assertTrue(time2 - 2500L >= time1);
         assertTrue(time2 - 4500L < time1);
-        assertNoMemoryLeak(numOfAllocationsBefore);
+        assertNoMemoryLeak(this.numOfAllocationsBefore);
     }
 
     @Test

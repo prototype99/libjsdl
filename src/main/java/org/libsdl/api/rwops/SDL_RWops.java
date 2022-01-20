@@ -69,26 +69,26 @@ public final class SDL_RWops extends Structure {
     @Override
     public void read() {
         super.readField("type");
-        switch (type) {
+        switch (this.type) {
             case SDL_RWOPS_WINFILE:
-                hidden.setType(SDL_RWopsWindowsIO.class);
+                this.hidden.setType(SDL_RWopsWindowsIO.class);
                 break;
             case SDL_RWOPS_STDFILE:
-                hidden.setType(SDL_RWopsStdIO.class);
+                this.hidden.setType(SDL_RWopsStdIO.class);
                 break;
             case SDL_RWOPS_JNIFILE:
-                hidden.setType(SDL_RWopsAndroidIO.class);
+                this.hidden.setType(SDL_RWopsAndroidIO.class);
                 break;
             case SDL_RWOPS_MEMORY:
             case SDL_RWOPS_MEMORY_RO:
-                hidden.setType(SDL_RWopsMemoryIO.class);
+                this.hidden.setType(SDL_RWopsMemoryIO.class);
                 break;
             case SDL_RWOPS_VITAFILE:
-                hidden.setType(SDL_RWopsVitaIO.class);
+                this.hidden.setType(SDL_RWopsVitaIO.class);
                 break;
             case SDL_RWOPS_UNKNOWN:
             default:
-                hidden.setType(SDL_RWopsUnknownIO.class);
+                this.hidden.setType(SDL_RWopsUnknownIO.class);
                 break;
         }
         super.read();

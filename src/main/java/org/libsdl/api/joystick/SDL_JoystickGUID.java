@@ -18,6 +18,6 @@ public final class SDL_JoystickGUID extends Structure implements Structure.ByVal
 
     @Override
     public String toString() {
-        return new UUID(mostSigBits, leastSigBits).toString();
+        return new UUID(this.mostSigBits, this.leastSigBits).toString();
     }
 }

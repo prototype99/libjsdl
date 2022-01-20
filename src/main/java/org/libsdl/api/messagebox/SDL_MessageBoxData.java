@@ -34,7 +34,7 @@ public final class SDL_MessageBoxData extends Structure {
     }
 
     public void setButtons(SDL_MessageBoxButtonData[] buttonsArray) {
-        buttons = JnaUtils.writeArrayToNativeMemory(buttonsArray);
-        numbuttons = buttonsArray.length;
+        this.buttons = JnaUtils.writeArrayToNativeMemory(buttonsArray);
+        this.numbuttons = buttonsArray.length;
     }
 }

@@ -32,7 +32,7 @@ public final class SdlSurfaceTest {
     @BeforeEach
     public void setUp() {
         SDL_InitSubSystem(SDL_INIT_VIDEO);
-        numOfAllocationsBefore = SDL_GetNumAllocations();
+        this.numOfAllocationsBefore = SDL_GetNumAllocations();
     }
 
     @Test
@@ -51,7 +51,7 @@ public final class SdlSurfaceTest {
         assertEquals(300, s.h);
         SDL_FreeSurface(s);
 
-        assertNoMemoryLeak(numOfAllocationsBefore);
+        assertNoMemoryLeak(this.numOfAllocationsBefore);
     }
 
     @Test
@@ -126,7 +126,7 @@ public final class SdlSurfaceTest {
         Files.deleteIfExists(tempDirectory);
 
         SDL_FreeSurface(surface);
-        assertNoMemoryLeak(numOfAllocationsBefore);
+        assertNoMemoryLeak(this.numOfAllocationsBefore);
     }
 
     @AfterEach
