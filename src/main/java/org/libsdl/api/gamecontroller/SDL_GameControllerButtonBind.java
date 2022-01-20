@@ -34,6 +34,8 @@ public class SDL_GameControllerButtonBind extends Structure {
             case SDL_CONTROLLER_BINDTYPE_HAT:
                 value.setType("hat");
                 break;
+            default:
+                System.out.println("Invalid bind type detected");
         }
         super.read();
     }
