@@ -1,10 +1,8 @@
 package org.libsdl.api.mouse;
 
 import com.sun.jna.Pointer;
-import com.sun.jna.ptr.ByteByReference;
 import com.sun.jna.ptr.IntByReference;
 import org.intellij.lang.annotations.MagicConstant;
-import org.libsdl.api.event.SdlEvents;
 import org.libsdl.api.surface.SDL_Surface;
 import org.libsdl.api.video.SDL_Window;
 import org.libsdl.jna.NativeLoader;

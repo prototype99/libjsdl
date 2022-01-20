@@ -1,6 +1,5 @@
 package org.libsdl.api.messagebox;
 
-import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;

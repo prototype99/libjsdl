@@ -1,10 +1,7 @@
 package org.libsdl.api.joystick;
 
-import java.io.PrintStream;
 import com.sun.jna.ptr.ShortByReference;
 import org.junit.jupiter.api.Test;
-
-import org.libsdl.api.SDL_SubSystem;
 import org.libsdl.api.event.SdlEvents;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
