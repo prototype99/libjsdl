@@ -35,7 +35,7 @@ public final class SdlStdinc {
     //
     //    public static native Pointer SDL_realloc(Pointer mem, size_t size);
 
-    public static native void SDL_free(Pointer mem);
+    public static native void SDL_Free(Pointer mem);
 
     //    /**
     //     * Get the current set of SDL memory functions

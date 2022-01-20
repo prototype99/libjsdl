@@ -25,7 +25,7 @@ import static org.libsdl.api.rwops.SdlRWops.SDL_LoadFile_RW;
 import static org.libsdl.api.rwops.SdlRWops.SDL_RWFromFile;
 import static org.libsdl.api.rwops.SdlRWops.SDL_RWclose;
 import static org.libsdl.api.stdinc.SdlStdinc.SDL_GetNumAllocations;
-import static org.libsdl.api.stdinc.SdlStdinc.SDL_free;
+import static org.libsdl.api.stdinc.SdlStdinc.SDL_Free;
 
 public final class SdlRWopsTest {
 
@@ -115,7 +115,7 @@ public final class SdlRWopsTest {
         assertEquals('s', (char) (buffer.getByte(offset)));
 
         assertEquals(allocCount+1, SDL_GetNumAllocations());
-        SDL_free(buffer);
+        SDL_Free(buffer);
         assertEquals(allocCount, SDL_GetNumAllocations());
     }
 

@@ -15,21 +15,21 @@ import static org.libsdl.api.endian.SdlEndianConst.SDL_LIL_ENDIAN;
  *
  * <p>Note: Taken from com.sun.jna.Structure.FFIType.size_t</p>
  */
-public class size_t extends IntegerType {
+public class SizeT extends IntegerType {
 
 	private static final long serialVersionUID = 2398288011955445078L;
 
 	/** Size of a size_t integer, in bytes. */
-    public static int SIZE = Native.SIZE_T_SIZE;    //Platform.is64Bit() ? 8 : 4;
+    public static int size = Native.SIZE_T_SIZE;
 
     /** Create a zero-valued Size. */
-    public size_t() {
+    public SizeT() {
         this(0L);
     }
 
     /** Create a Size with the given value. */
-    public size_t(long value) {
-        super(SIZE, value);
+    public SizeT(long value) {
+        super(size, value);
     }
 
     public static final class Ref extends ByReference {
@@ -38,30 +38,31 @@ public class size_t extends IntegerType {
          * Allocates memory at this pointer, to contain the pointed-to value.
          */
         public Ref() {
-            super(size_t.SIZE);
+            super(SizeT.size);
         }
 
-        public Ref(size_t initialValue) {
-            super(size_t.SIZE);
+        public Ref(SizeT initialValue) {
+            super(SizeT.size);
             setValue(initialValue);
         }
 
         public void setValue(size_t newValue) {
+        public void setValue(SizeT newValue) {
             long currentValue = newValue.longValue();
-            if (SIZE == 4) {
+            if (size == 4) {
                 getPointer().setInt(0L, (int) currentValue);
-            } else if (SIZE == 8) {
+            } else if (size == 8) {
                 getPointer().setLong(0L, currentValue);
             } else {
                 switch (SDL_BYTEORDER) {
                     case SDL_LIL_ENDIAN:
-                        for (long i = 0; i < SIZE; i++) {
+                        for (long i = 0; i < size; i++) {
                             getPointer().setByte(i, (byte) (currentValue & 0xFF));
                             currentValue = currentValue >> 8;
                         }
                         break;
                     case SDL_BIG_ENDIAN:
-                        for (long i = SIZE - 1; i >= 0; i--) {
+                        for (long i = size - 1; i >= 0; i--) {
                             getPointer().setByte(i, (byte) (currentValue & 0xFF));
                             currentValue = currentValue >> 8;
                         }
@@ -73,17 +74,18 @@ public class size_t extends IntegerType {
         }
 
         public size_t getValue() {
+        public SizeT getValue() {
             long currentValue = 0L;
             int rotation = 0;
             switch (SDL_BYTEORDER) {
                 case SDL_LIL_ENDIAN:
-                    for (long i = 0; i < SIZE; i++) {
+                    for (long i = 0; i < size; i++) {
                         currentValue += (getPointer().getByte(i) & 0xFFL) << rotation;
                         rotation = rotation + 8;
                     }
                     break;
                 case SDL_BIG_ENDIAN:
-                    for (long i = SIZE - 1; i >= 0; i--) {
+                    for (long i = size - 1; i >= 0; i--) {
                         currentValue += (getPointer().getByte(i) & 0xFFL) << rotation;
                         rotation = rotation + 8;
                     }
@@ -91,11 +93,11 @@ public class size_t extends IntegerType {
                 default:
                     this.throwException();
             }
+            return new SizeT(currentValue);
+        }
 
         private void throwException() {
             throw new IllegalStateException("Endianness of the platform has not been defined");
-        }
-            return new size_t(currentValue);
         }
     }
 }

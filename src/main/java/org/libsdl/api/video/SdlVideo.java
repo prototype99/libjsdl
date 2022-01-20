@@ -211,8 +211,8 @@ public final class SdlVideo {
         NativeFunctions.SDL_SetWindowResizable(window, resizable);
     }
 
-    public static void SDL_SetWindowAlwaysOnTop(SDL_Window window, boolean on_top) {
-        NativeFunctions.SDL_SetWindowAlwaysOnTop(window, on_top);
+    public static void SDL_SetWindowAlwaysOnTop(SDL_Window window, boolean onTop) {
+        NativeFunctions.SDL_SetWindowAlwaysOnTop(window, onTop);
     }
 
     public static void SDL_ShowWindow(SDL_Window window) {
@@ -581,7 +581,7 @@ public final class SdlVideo {
 
         public static native void SDL_SetWindowAlwaysOnTop(
                 SDL_Window window,
-                boolean on_top);
+                boolean onTop);
 
         public static native void SDL_ShowWindow(
                 SDL_Window window);

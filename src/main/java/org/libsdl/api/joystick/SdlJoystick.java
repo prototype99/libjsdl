@@ -238,12 +238,12 @@ public final class SdlJoystick {
         return NativeFunctions.SDL_JoystickGetButton(joystick, button);
     }
 
-    public static int SDL_JoystickRumble(SDL_Joystick joystick, short low_frequency_rumble, short high_frequency_rumble, int duration_ms) {
-        return NativeFunctions.SDL_JoystickRumble(joystick, low_frequency_rumble, high_frequency_rumble, duration_ms);
+    public static int SDL_JoystickRumble(SDL_Joystick joystick, short lowFrequencyRumble, short highFrequencyRumble, int durationMs) {
+        return NativeFunctions.SDL_JoystickRumble(joystick, lowFrequencyRumble, highFrequencyRumble, durationMs);
     }
 
-    public static int SDL_JoystickRumbleTriggers(SDL_Joystick joystick, short left_rumble, short right_rumble, int duration_ms) {
-        return NativeFunctions.SDL_JoystickRumbleTriggers(joystick, left_rumble, right_rumble, duration_ms);
+    public static int SDL_JoystickRumbleTriggers(SDL_Joystick joystick, short leftRumble, short rightRumble, int durationMs) {
+        return NativeFunctions.SDL_JoystickRumbleTriggers(joystick, leftRumble, rightRumble, durationMs);
     }
 
     public static boolean SDL_JoystickHasLED(SDL_Joystick joystick) {
@@ -428,15 +428,15 @@ public final class SdlJoystick {
 
         public static native int SDL_JoystickRumble(
                 SDL_Joystick joystick,
-                short low_frequency_rumble,
-                short high_frequency_rumble,
-                int duration_ms);
+                short lowFrequencyRumble,
+                short highFrequencyRumble,
+                int durationMs);
 
         public static native int SDL_JoystickRumbleTriggers(
                 SDL_Joystick joystick,
-                short left_rumble,
-                short right_rumble,
-                int duration_ms);
+                short leftRumble,
+                short rightRumble,
+                int durationMs);
 
         public static native boolean SDL_JoystickHasLED(
                 SDL_Joystick joystick);
