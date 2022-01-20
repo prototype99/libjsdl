@@ -110,6 +110,7 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
     public static final int SDL_PIXELFORMAT_NV21 = SDL_DEFINE_PIXELFOURCC('N', 'V', '2', '1');
     public static final int SDL_PIXELFORMAT_EXTERNAL_OES = SDL_DEFINE_PIXELFOURCC('O', 'E', 'S', ' ');
 
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static int SDL_DEFINE_PIXELFOURCC(
             int a,
             int b,
@@ -118,7 +119,7 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
         return SdlStdinc.SDL_FOURCC(a, b, c, d);
     }
 
-    @SuppressWarnings("checkstyle:BooleanExpressionComplexity")
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:BooleanExpressionComplexity", "checkstyle:MagicNumber"})
     public static int SDL_DEFINE_PIXELFORMAT(
             int type,
             int order,
@@ -128,29 +129,35 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
         return (1 << 28) | (type << 24) | (order << 20) | (layout << 16) | (bits << 8) | bytes;
     }
 
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:MagicNumber"})
     public static int SDL_PIXELFLAG(
             int x) {
         return (x >> 28) & 0x0F;
     }
 
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:MagicNumber"})
     public static int SDL_PIXELTYPE(
             int x) {
         return (x >> 24) & 0x0F;
     }
 
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:MagicNumber"})
     public static int SDL_PIXELORDER(final int x) {
         return (x >> 20) & 0x0F;
     }
 
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:MagicNumber"})
     public static int SDL_PIXELLAYOUT(
             int x) {
         return (x >> 16) & 0x0F;
     }
 
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:MagicNumber"})
     public static int SDL_BITSPERPIXEL(final int x) {
         return (x >> 8) & 0xFF;
     }
 
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:MagicNumber"})
     public static int SDL_BYTESPERPIXEL(
             int x) {
         return (SDL_ISPIXELFORMAT_FOURCC(x)
@@ -159,6 +166,7 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
                 || (x == SDL_PIXELFORMAT_YVYU)) ? 2 : 1) : (x & 0xFF));
     }
 
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static boolean SDL_ISPIXELFORMAT_INDEXED(
             int format) {
         return (!SDL_ISPIXELFORMAT_FOURCC(format)
@@ -167,6 +175,7 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
                 || (SDL_PIXELTYPE(format) == SDL_PIXELTYPE_INDEX8)));
     }
 
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static boolean SDL_ISPIXELFORMAT_PACKED(
             int format) {
         return (!SDL_ISPIXELFORMAT_FOURCC(format)
@@ -175,7 +184,7 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
                 || (SDL_PIXELTYPE(format) == SDL_PIXELTYPE_PACKED32)));
     }
 
-    @SuppressWarnings("checkstyle:BooleanExpressionComplexity")
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:BooleanExpressionComplexity"})
     public static boolean SDL_ISPIXELFORMAT_ARRAY(
             int format) {
         return (!SDL_ISPIXELFORMAT_FOURCC(format)
@@ -186,7 +195,7 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
                 || (SDL_PIXELTYPE(format) == SDL_PIXELTYPE_ARRAYF32)));
     }
 
-    @SuppressWarnings("checkstyle:BooleanExpressionComplexity")
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:BooleanExpressionComplexity"})
     public static boolean SDL_ISPIXELFORMAT_ALPHA(
             int format) {
         return ((SDL_ISPIXELFORMAT_PACKED(format)
@@ -201,6 +210,7 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
                 || (SDL_PIXELORDER(format) == SDL_ARRAYORDER_BGRA))));
     }
 
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static boolean SDL_ISPIXELFORMAT_FOURCC(
             int format) {
         return (format != 0) && (SDL_PIXELFLAG(format) != 1);

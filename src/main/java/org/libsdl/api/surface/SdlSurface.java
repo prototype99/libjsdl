@@ -51,6 +51,7 @@ public final class SdlSurface {
         return ((s.flags & SDL_RLEACCEL) != 0);
     }
 
+    @SuppressWarnings("checkstyle:ParameterNumber")
     public static SDL_Surface SDL_CreateRGBSurface(int flags, int width, int height, int depth, int rMask, int gMask, int bMask, int aMask) {
         return NativeFunctions.SDL_CreateRGBSurface(flags, width, height, depth, rMask, gMask, bMask, aMask);
     }
@@ -59,6 +60,7 @@ public final class SdlSurface {
         return NativeFunctions.SDL_CreateRGBSurfaceWithFormat(flags, width, height, depth, format);
     }
 
+    @SuppressWarnings("checkstyle:ParameterNumber")
     public static SDL_Surface SDL_CreateRGBSurfaceFrom(Pointer pixels, int width, int height, int depth, int pitch, int rMask, int gMask, int bMask, int aMask) {
         return NativeFunctions.SDL_CreateRGBSurfaceFrom(pixels, width, height, depth, pitch, rMask, gMask, bMask, aMask);
     }
@@ -169,6 +171,7 @@ public final class SdlSurface {
         return NativeFunctions.SDL_ConvertSurfaceFormat(src, pixelFormat, flags);
     }
 
+    @SuppressWarnings("checkstyle:ParameterNumber")
     public static int SDL_ConvertPixels(int width, int height, int srcFormat, Pointer src, int srcPitch, int dstFormat, Pointer dst, int dstPitch) {
         return NativeFunctions.SDL_ConvertPixels(width, height, srcFormat, src, srcPitch, dstFormat, dst, dstPitch);
     }

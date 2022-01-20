@@ -14,6 +14,7 @@ public class SDL_JoystickID extends IntegerType {
     /**
      * Create a zero-valued signed IntegerType.
      */
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_JoystickID() {
         super(4);
     }
@@ -23,6 +24,7 @@ public class SDL_JoystickID extends IntegerType {
      *
      * @param value
      */
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_JoystickID(long value) {
         super(4, value);
     }

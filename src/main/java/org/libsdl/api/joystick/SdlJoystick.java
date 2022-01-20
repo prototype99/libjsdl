@@ -176,6 +176,7 @@ public final class SdlJoystick {
     }
 
     public static String SDL_JoystickGetGUIDString(SDL_JoystickGUID guid) {
+        @SuppressWarnings("checkstyle:MagicNumber")
         Memory textBuffer = new Memory(33L);
         NativeFunctions.SDL_JoystickGetGUIDString(guid, textBuffer, (int) textBuffer.size());
         return textBuffer.getString(0L, StandardCharsets.US_ASCII.toString());
