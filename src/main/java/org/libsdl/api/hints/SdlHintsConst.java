@@ -243,4 +243,7 @@ public final class SdlHintsConst {
     public static final String SDL_HINT_XINPUT_USE_OLD_JOYSTICK_MAPPING = "SDL_XINPUT_USE_OLD_JOYSTICK_MAPPING";
 
     public static final String SDL_HINT_AUDIO_INCLUDE_MONITORS = "SDL_AUDIO_INCLUDE_MONITORS";
+
+    private SdlHintsConst() {
+    }
 }

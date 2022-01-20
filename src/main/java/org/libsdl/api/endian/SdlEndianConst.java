@@ -18,4 +18,7 @@ public class SdlEndianConst {
             SDL_BYTEORDER = SDL_LIL_ENDIAN;
         }
     }
+
+    private SdlEndianConst() {
+    }
 }

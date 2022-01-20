@@ -6,6 +6,9 @@ import org.libsdl.jna.NativeLoader;
 
 public class SdlGesture {
 
+    private SdlGesture() {
+    }
+
     public static int SDL_RecordGesture(SDL_TouchID touchId) {
         return NativeFunctions.SDL_RecordGesture(touchId);
     }

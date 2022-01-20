@@ -6,6 +6,9 @@ import org.libsdl.jna.NativeLoader;
 
 public final class SdlFilesystem {
 
+    private SdlFilesystem() {
+    }
+
     public static String SDL_GetBasePath() {
         Pointer path = NativeFunctions.SDL_GetBasePath();
         return JnaUtils.extractStringAndReleaseNativeMemory(path);

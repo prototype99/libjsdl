@@ -31,6 +31,9 @@ import static org.libsdl.jna.JnaUtils.extractStringAndReleaseNativeMemory;
 @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
 public final class SdlGamecontroller {
 
+    private SdlGamecontroller() {
+    }
+
     public static int SDL_GameControllerAddMappingsFromRW(SDL_RWops rw, int freerw) {
         return NativeFunctions.SDL_GameControllerAddMappingsFromRW(rw, freerw);
     }

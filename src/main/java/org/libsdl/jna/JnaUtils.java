@@ -7,6 +7,9 @@ import static org.libsdl.api.stdinc.SdlStdinc.SDL_Free;
 
 public class JnaUtils {
 
+    private JnaUtils() {
+    }
+
     public static String extractStringAndReleaseNativeMemory(Pointer pointer) {
         String result = pointer.getString(0L);
         SDL_Free(pointer);

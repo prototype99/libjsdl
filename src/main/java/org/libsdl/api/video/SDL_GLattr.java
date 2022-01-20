@@ -33,6 +33,6 @@ public final class SDL_GLattr implements JnaEnum {
     public static final int SDL_GL_CONTEXT_RESET_NOTIFICATION = 26;
     public static final int SDL_GL_CONTEXT_NO_ERROR = 27;
 
-    public SDL_GLattr() {
+    private SDL_GLattr() {
     }
 }

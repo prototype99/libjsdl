@@ -110,6 +110,9 @@ public final class SDL_PixelFormatEnum implements JnaEnum {
     public static final int SDL_PIXELFORMAT_NV21 = SDL_DEFINE_PIXELFOURCC('N', 'V', '2', '1');
     public static final int SDL_PIXELFORMAT_EXTERNAL_OES = SDL_DEFINE_PIXELFOURCC('O', 'E', 'S', ' ');
 
+    private SDL_PixelFormatEnum() {
+    }
+
     @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static int SDL_DEFINE_PIXELFOURCC(
             int a,

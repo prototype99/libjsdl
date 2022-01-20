@@ -42,6 +42,9 @@ public final class SdlSurface {
      */
     public static final int SDL_SIMD_ALIGNED = 0x00000008;
 
+    private SdlSurface() {
+    }
+
     /**
      * Evaluates to true if the surface needs to be locked before access.
      */

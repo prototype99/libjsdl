@@ -57,6 +57,9 @@ public final class SdlJoystick {
     public static final int SDL_HAT_LEFTUP = SDL_HAT_LEFT | SDL_HAT_UP;
     public static final int SDL_HAT_LEFTDOWN = SDL_HAT_LEFT | SDL_HAT_DOWN;
 
+    private SdlJoystick() {
+    }
+
     public static void SDL_LockJoysticks() {
         NativeFunctions.SDL_LockJoysticks();
     }

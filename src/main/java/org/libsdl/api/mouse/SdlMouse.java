@@ -27,6 +27,9 @@ public final class SdlMouse {
     public static final int SDL_BUTTON_X1MASK = SDL_BUTTON(SDL_BUTTON_X1);
     public static final int SDL_BUTTON_X2MASK = SDL_BUTTON(SDL_BUTTON_X2);
 
+    private SdlMouse() {
+    }
+
     public static int SDL_BUTTON(
             int x) {
         return 1 << (x - 1);

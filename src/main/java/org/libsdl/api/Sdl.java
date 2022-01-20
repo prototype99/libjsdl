@@ -24,6 +24,9 @@ public final class Sdl {
     // TODO: Revise String freeing after use
     // TODO: Revise @MagicConstant in the delegating methods
 
+    private Sdl() {
+    }
+
     public static int SDL_Init(
             @MagicConstant(flagsFromClass = SDL_SubSystem.class) int flags) {
         NativeLoader.loadSdl2Library();
