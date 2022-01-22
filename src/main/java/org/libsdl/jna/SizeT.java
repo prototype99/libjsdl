@@ -47,7 +47,7 @@ public class SizeT extends IntegerType {
             setValue(initialValue);
         }
 
-        public void setValue(size_t newValue) {
+        @SuppressWarnings("checkstyle:MagicNumber")
         public void setValue(SizeT newValue) {
             long currentValue = newValue.longValue();
             if (size == 4) {
@@ -74,7 +74,7 @@ public class SizeT extends IntegerType {
             }
         }
 
-        public size_t getValue() {
+        @SuppressWarnings("checkstyle:MagicNumber")
         public SizeT getValue() {
             long currentValue = 0L;
             int rotation = 0;

@@ -2,6 +2,7 @@ package org.libsdl.api.surface;
 
 import org.libsdl.jna.JnaEnum;
 
+@SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:TypeName"})
 public final class SDL_YUV_CONVERSION_MODE implements JnaEnum {
 
     /**

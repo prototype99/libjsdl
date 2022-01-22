@@ -130,7 +130,7 @@ public final class SdlAudio {
         }
     }
 
-    public static final int SDL_AUDIO_ALLOW_FREQUENCY_CHANGE = 0x00000001;
+    @SuppressWarnings("checkstyle:DeclarationOrder")
     public static final int SDL_AUDIO_ALLOW_FORMAT_CHANGE = 0x00000002;
     public static final int SDL_AUDIO_ALLOW_CHANNELS_CHANGE = 0x00000004;
     public static final int SDL_AUDIO_ALLOW_SAMPLES_CHANGE = 0x00000008;

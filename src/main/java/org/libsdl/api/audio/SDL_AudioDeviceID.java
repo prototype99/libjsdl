@@ -13,10 +13,12 @@ import com.sun.jna.IntegerType;
  */
 public class SDL_AudioDeviceID extends IntegerType {
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_AudioDeviceID() {
         super(4);
     }
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_AudioDeviceID(int value) {
         super(4, value);
     }
