@@ -2,14 +2,14 @@ package org.libsdl.api.rwops;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Pointer;
-import org.libsdl.jna.size_t;
+import org.libsdl.jna.SizeT;
 
 @FunctionalInterface
 public interface SDL_RWWriteFunction extends Callback {
 
-    size_t write(
+    SizeT write(
             SDL_RWops context,
             Pointer ptr,
-            size_t size,
-            size_t num);
+            SizeT size,
+            SizeT num);
 }

@@ -3,10 +3,10 @@ package org.libsdl.api.shape;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeBinarizeAlpha;
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeColorKey;
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeDefault;
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeReverseBinarizeAlpha;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_BINARIZE_ALPHA;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_COLOR_KEY;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_DEFAULT;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_REVERSE_BINARIZE_ALPHA;
 
 @Structure.FieldOrder({
         "mode",
@@ -25,12 +25,12 @@ public class SDL_WindowShapeMode extends Structure {
     public void read() {
         readField("mode");
         switch (mode) {
-            case ShapeModeDefault:
-            case ShapeModeBinarizeAlpha:
-            case ShapeModeReverseBinarizeAlpha:
+            case SHAPE_MODE_DEFAULT:
+            case SHAPE_MODE_BINARIZE_ALPHA:
+            case SHAPE_MODE_REVERSE_BINARIZE_ALPHA:
                 parameters.setType("binarizationCutoff");
                 break;
-            case ShapeModeColorKey:
+            case SHAPE_MODE_COLOR_KEY:
                 parameters.setType("colorKey");
                 break;
             default:

@@ -2,14 +2,14 @@ package org.libsdl.api.rwops;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Pointer;
-import org.libsdl.jna.size_t;
+import org.libsdl.jna.SizeT;
 
 @FunctionalInterface
 public interface SDL_RWReadFunction extends Callback {
 
-    size_t read(
+    SizeT read(
             SDL_RWops context,
             Pointer ptr,
-            size_t itemSize,
-            size_t maxnum);
+            SizeT itemSize,
+            SizeT maxnum);
 }

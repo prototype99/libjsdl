@@ -4,7 +4,7 @@ import com.sun.jna.Pointer;
 import org.intellij.lang.annotations.MagicConstant;
 import org.libsdl.api.error.SdlError;
 import org.libsdl.jna.NativeLoader;
-import org.libsdl.jna.size_t;
+import org.libsdl.jna.SizeT;
 
 public final class SdlRWops {
 
@@ -58,29 +58,29 @@ public final class SdlRWops {
     public static native long SDL_RWtell(
             SDL_RWops context);
 
-    public static native size_t SDL_RWread(
+    public static native SizeT SDL_RWread(
             SDL_RWops context,
             Pointer ptr,
-            size_t itemSize,
-            size_t maxnum);
+            SizeT itemSize,
+            SizeT maxnum);
 
-    public static native size_t SDL_RWwrite(
+    public static native SizeT SDL_RWwrite(
             SDL_RWops context,
             Pointer ptr,
-            size_t size,
-            size_t num);
+            SizeT size,
+            SizeT num);
 
     public static native int SDL_RWclose(
             SDL_RWops context);
 
     public static native Pointer SDL_LoadFile_RW(
             SDL_RWops src,
-            size_t.Ref datasize,
+            SizeT.Ref datasize,
             int freesrc);
 
     public static native Pointer SDL_LoadFile(
             String file,
-            size_t.Ref datasize);
+            SizeT.Ref datasize);
 
     public static native byte SDL_ReadU8(
             SDL_RWops src);
@@ -103,31 +103,31 @@ public final class SdlRWops {
     public static native long SDL_ReadBE64(
             SDL_RWops src);
 
-    public static native size_t SDL_WriteU8(
+    public static native SizeT SDL_WriteU8(
             SDL_RWops dst,
             byte value);
 
-    public static native size_t SDL_WriteLE16(
+    public static native SizeT SDL_WriteLE16(
             SDL_RWops dst,
             short value);
 
-    public static native size_t SDL_WriteBE16(
+    public static native SizeT SDL_WriteBE16(
             SDL_RWops dst,
             short value);
 
-    public static native size_t SDL_WriteLE32(
+    public static native SizeT SDL_WriteLE32(
             SDL_RWops dst,
             int value);
 
-    public static native size_t SDL_WriteBE32(
+    public static native SizeT SDL_WriteBE32(
             SDL_RWops dst,
             int value);
 
-    public static native size_t SDL_WriteLE64(
+    public static native SizeT SDL_WriteLE64(
             SDL_RWops dst,
             long value);
 
-    public static native size_t SDL_WriteBE64(
+    public static native SizeT SDL_WriteBE64(
             SDL_RWops dst,
             long value);
 }

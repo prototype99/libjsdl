@@ -36,17 +36,17 @@ public class SDL_AudioCVT extends Structure {
     /**
      * Source audio format
      */
-    SDL_AudioFormat src_format;
+    SDL_AudioFormat srcFormat;
 
     /**
      * Target audio format
      */
-    SDL_AudioFormat dst_format;
+    SDL_AudioFormat dstFormat;
 
     /**
      * Rate conversion increment
      */
-    double rate_incr;
+    double rateIncr;
 
     /**
      * Buffer to hold entire audio data
@@ -61,17 +61,17 @@ public class SDL_AudioCVT extends Structure {
     /**
      * Length of converted audio buffer
      */
-    int len_cvt;
+    int lenCvt;
 
     /**
      * buffer must be len*len_mult big
      */
-    int len_mult;
+    int lenMult;
 
     /**
      * Given len, final size is len*len_ratio
      */
-    double len_ratio;
+    double lenRatio;
 
     // TODO: Test sizeof and if it generally works
     /**
@@ -82,5 +82,5 @@ public class SDL_AudioCVT extends Structure {
     /**
      * Current audio conversion function
      */
-    int filter_index;
+    int filterIndex;
 }
