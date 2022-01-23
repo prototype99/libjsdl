@@ -15,7 +15,7 @@ import com.sun.jna.ptr.ByteByReference;
         "len_mult",
         "len_ratio",
         "filters",
-        "filter_index",
+        "filter_index"
 })
 public class SDL_AudioCVT extends Structure {
 
