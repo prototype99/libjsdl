@@ -36,7 +36,7 @@ public final class SdlSurfaceTest {
     }
 
     @Test
-    public void createSurfaceShouldFillSDL_Surface() {
+    public void createSurfaceShouldFillSDLSurface() {
         SDL_Surface s = SDL_CreateRGBSurface(
                 0,
                 400,

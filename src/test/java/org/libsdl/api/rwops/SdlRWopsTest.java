@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.libsdl.api.SdlTest;
-import org.libsdl.jna.size_t;
+import org.libsdl.jna.SizeT;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -40,7 +40,7 @@ public final class SdlRWopsTest {
         assertNotNull(ops, "Opening file " + sampleFile + " failed: " + SDL_GetError());
         try {
             SDL_RWReadFunction readFunction = ops.read;
-            size_t actualReadCount = readFunction.read(ops, buffer, new size_t(1L), new size_t(buffer.size()));
+            SizeT actualReadCount = readFunction.read(ops, buffer, new SizeT(1L), new SizeT(buffer.size()));
 
             assertEquals(Files.size(sampleFile), actualReadCount.longValue());
             long offset = 0L;
@@ -78,7 +78,7 @@ public final class SdlRWopsTest {
 
         SDL_RWops ops = SDL_RWFromFile(sampleFile.toString(), "rb");
         assertNotNull(ops, "Opening file " + sampleFile + " failed: " + SDL_GetError());
-        size_t.Ref actualReadCount = new size_t.Ref();
+        SizeT.Ref actualReadCount = new SizeT.Ref();
         Pointer buffer = SDL_LoadFile_RW(ops, actualReadCount, 1);
 
         assertEquals(Files.size(sampleFile), actualReadCount.getValue().longValue());
@@ -97,7 +97,7 @@ public final class SdlRWopsTest {
         Path sampleFile = SdlTest.getSampleFile(this, "sample.txt");
         int allocCount = SDL_GetNumAllocations();
 
-        size_t.Ref actualReadCount = new size_t.Ref();
+        SizeT.Ref actualReadCount = new SizeT.Ref();
         Pointer buffer = SDL_LoadFile(sampleFile.toString(), actualReadCount);
         assertNotNull(buffer, "Failed to load file " + sampleFile + ": " + SDL_GetError());
 

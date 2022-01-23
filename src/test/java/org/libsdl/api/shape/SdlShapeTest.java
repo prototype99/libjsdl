@@ -28,7 +28,7 @@ import static org.libsdl.api.shape.SdlShape.SDL_INVALID_SHAPE_ARGUMENT;
 import static org.libsdl.api.shape.SdlShape.SDL_NONSHAPEABLE_WINDOW;
 import static org.libsdl.api.shape.SdlShape.SDL_SetWindowShape;
 import static org.libsdl.api.shape.SdlShape.SDL_WINDOW_LACKS_SHAPE;
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeColorKey;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_COLOR_KEY;
 import static org.libsdl.api.surface.SdlSurface.SDL_FreeSurface;
 import static org.libsdl.api.surface.SdlSurface.SDL_LoadBMP;
 import static org.libsdl.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
@@ -76,7 +76,7 @@ public final class SdlShapeTest {
                     case SDL_KEYDOWN:
                         if (evt.key.keysym.sym == SDLK_SPACE) {
                             SDL_WindowShapeMode shapeMode1 = new SDL_WindowShapeMode();
-                            shapeMode1.mode = ShapeModeColorKey;
+                            shapeMode1.mode = SHAPE_MODE_COLOR_KEY;
                             shapeMode1.parameters.setType("colorKey");
                             shapeMode1.parameters.colorKey = new SDL_Color();
                             shapeMode1.parameters.colorKey.r = 0;

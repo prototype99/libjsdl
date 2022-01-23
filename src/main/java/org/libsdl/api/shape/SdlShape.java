@@ -6,9 +6,9 @@ import org.libsdl.api.video.SDL_Window;
 import org.libsdl.api.video.SDL_WindowFlags;
 import org.libsdl.jna.NativeLoader;
 
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeBinarizeAlpha;
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeDefault;
-import static org.libsdl.api.shape.WindowShapeMode.ShapeModeReverseBinarizeAlpha;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_BINARIZE_ALPHA;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_DEFAULT;
+import static org.libsdl.api.shape.WindowShapeMode.SHAPE_MODE_REVERSE_BINARIZE_ALPHA;
 
 public final class SdlShape {
 
@@ -22,7 +22,7 @@ public final class SdlShape {
     @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static boolean SDL_SHAPEMODEALPHA(
             @MagicConstant(valuesFromClass = WindowShapeMode.class) int mode) {
-        return mode == ShapeModeDefault || mode == ShapeModeBinarizeAlpha || mode == ShapeModeReverseBinarizeAlpha;
+        return mode == SHAPE_MODE_DEFAULT || mode == SHAPE_MODE_BINARIZE_ALPHA || mode == SHAPE_MODE_REVERSE_BINARIZE_ALPHA;
     }
 
     @MagicConstant(intValues = {0, SDL_INVALID_SHAPE_ARGUMENT, SDL_NONSHAPEABLE_WINDOW})
