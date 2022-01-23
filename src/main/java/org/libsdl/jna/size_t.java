@@ -67,7 +67,7 @@ public class size_t extends IntegerType {
                         }
                         break;
                     default:
-                        throw new IllegalStateException("Endianness of the platform has not been defined");
+                        this.throwException();
                 }
             }
         }
@@ -89,8 +89,12 @@ public class size_t extends IntegerType {
                     }
                     break;
                 default:
-                    throw new IllegalStateException("Endianness of the platform has not been defined");
+                    this.throwException();
             }
+
+        private void throwException() {
+            throw new IllegalStateException("Endianness of the platform has not been defined");
+        }
             return new size_t(currentValue);
         }
     }
