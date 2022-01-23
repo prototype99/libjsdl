@@ -16,11 +16,13 @@ public class SdlLocale {
 
     public static List<SDL_Locale> SDL_GetPreferredLocalesList() {
         Pointer locales = SDL_GetPreferredLocales();
-        List<SDL_Locale> localesList= new ArrayList<>();
+        List<SDL_Locale> localesList = new ArrayList<>();
         while (true) {
             SDL_Locale locale = new SDL_Locale(locales);
             locale.read();
-            if (locale.language == null) break;
+            if (locale.language == null) {
+                break;
+            }
             localesList.add(locale);
             locales = locales.getPointer(locale.size());
         }

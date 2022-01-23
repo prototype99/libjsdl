@@ -2,7 +2,6 @@ package org.libsdl.api.rwops;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 import org.junit.jupiter.api.AfterEach;
@@ -112,7 +111,7 @@ public final class SdlRWopsTest {
         assertEquals('i', (char) (buffer.getByte(offset++)));
         assertEquals('s', (char) (buffer.getByte(offset)));
 
-        assertEquals(allocCount+1, SDL_GetNumAllocations());
+        assertEquals(allocCount + 1, SDL_GetNumAllocations());
         SDL_Free(buffer);
         assertEquals(allocCount, SDL_GetNumAllocations());
     }
