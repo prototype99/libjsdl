@@ -19,7 +19,7 @@ public class SizeT extends IntegerType {
 
 	private static final long serialVersionUID = 2398288011955445078L;
 
-	/** Size of a size_t integer, in bytes. */
+    /** Size of a size_t integer, in bytes. */
     public static int size = Native.SIZE_T_SIZE;
 
     /** Create a zero-valued Size. */
