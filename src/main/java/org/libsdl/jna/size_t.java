@@ -21,6 +21,7 @@ public class SizeT extends IntegerType {
 
     /** Size of a size_t integer, in bytes. */
     public static int size = Native.SIZE_T_SIZE;
+    //Platform.is64Bit() ? 8 : 4;
 
     /** Create a zero-valued Size. */
     public SizeT() {
