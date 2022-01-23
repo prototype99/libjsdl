@@ -18,39 +18,6 @@ import static org.libsdl.api.rwops.SdlRWops.SDL_RWFromFile;
  */
 public final class SdlAudio {
 
-    public static final int SDL_AUDIO_MASK_BITSIZE = (0xFF);
-    public static final int SDL_AUDIO_MASK_DATATYPE = (1 << 8);
-    public static final int SDL_AUDIO_MASK_ENDIAN = (1 << 12);
-    public static final int SDL_AUDIO_MASK_SIGNED = (1 << 15);
-
-    public static int SDL_AUDIO_BITSIZE(int x) {
-        return (x & SDL_AUDIO_MASK_BITSIZE);
-    }
-
-    public static boolean SDL_AUDIO_ISFLOAT(int x) {
-        return (x & SDL_AUDIO_MASK_DATATYPE) != 0;
-    }
-
-    public static boolean SDL_AUDIO_ISBIGENDIAN(int x) {
-        return (x & SDL_AUDIO_MASK_ENDIAN) != 0;
-    }
-
-    public static boolean SDL_AUDIO_ISSIGNED(int x) {
-        return (x & SDL_AUDIO_MASK_SIGNED) != 0;
-    }
-
-    public static boolean SDL_AUDIO_ISINT(int x) {
-        return (!SDL_AUDIO_ISFLOAT(x));
-    }
-
-    public static boolean SDL_AUDIO_ISLITTLEENDIAN(int x) {
-        return (!SDL_AUDIO_ISBIGENDIAN(x));
-    }
-
-    public static boolean SDL_AUDIO_ISUNSIGNED(int x) {
-        return (!SDL_AUDIO_ISSIGNED(x));
-    }
-
     /**
      * Unsigned 8-bit samples
      */
@@ -114,6 +81,59 @@ public final class SdlAudio {
     public static final int AUDIO_S32SYS;
     public static final int AUDIO_F32SYS;
 
+    public static final int SDL_AUDIO_ALLOW_FREQUENCY_CHANGE = 0x00000001;
+    public static final int SDL_AUDIO_ALLOW_FORMAT_CHANGE = 0x00000002;
+    public static final int SDL_AUDIO_ALLOW_CHANNELS_CHANGE = 0x00000004;
+    public static final int SDL_AUDIO_ALLOW_SAMPLES_CHANGE = 0x00000008;
+    public static final int SDL_AUDIO_ALLOW_ANY_CHANGE = SDL_AUDIO_ALLOW_FREQUENCY_CHANGE
+            | SDL_AUDIO_ALLOW_FORMAT_CHANGE
+            | SDL_AUDIO_ALLOW_CHANNELS_CHANGE
+            | SDL_AUDIO_ALLOW_SAMPLES_CHANGE;
+
+    public static final int SDL_AUDIO_MASK_BITSIZE = (0xFF);
+    @SuppressWarnings("checkstyle:MagicNumber")
+    public static final int SDL_AUDIO_MASK_DATATYPE = (1 << 8);
+    @SuppressWarnings("checkstyle:MagicNumber")
+    public static final int SDL_AUDIO_MASK_ENDIAN = (1 << 12);
+    @SuppressWarnings("checkstyle:MagicNumber")
+    public static final int SDL_AUDIO_MASK_SIGNED = (1 << 15);
+    public static final int SDL_MIX_MAXVOLUME = 128;
+
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+    public static int SDL_AUDIO_BITSIZE(int x) {
+        return (x & SDL_AUDIO_MASK_BITSIZE);
+    }
+
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+    public static boolean SDL_AUDIO_ISFLOAT(int x) {
+        return (x & SDL_AUDIO_MASK_DATATYPE) != 0;
+    }
+
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+    public static boolean SDL_AUDIO_ISBIGENDIAN(int x) {
+        return (x & SDL_AUDIO_MASK_ENDIAN) != 0;
+    }
+
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+    public static boolean SDL_AUDIO_ISINT(int x) {
+        return (!SDL_AUDIO_ISFLOAT(x));
+    }
+
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+    public static boolean SDL_AUDIO_ISLITTLEENDIAN(int x) {
+        return (!SDL_AUDIO_ISBIGENDIAN(x));
+    }
+
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+    public static boolean SDL_AUDIO_ISSIGNED(int x) {
+        return (x & SDL_AUDIO_MASK_SIGNED) != 0;
+    }
+
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+    public static boolean SDL_AUDIO_ISUNSIGNED(int x) {
+        return (!SDL_AUDIO_ISSIGNED(x));
+    }
+
     static {
         if (SDL_BYTEORDER == SDL_LIL_ENDIAN) {
             AUDIO_U16SYS = AUDIO_U16LSB;
@@ -131,16 +151,6 @@ public final class SdlAudio {
     }
 
     @SuppressWarnings("checkstyle:DeclarationOrder")
-    public static final int SDL_AUDIO_ALLOW_FORMAT_CHANGE = 0x00000002;
-    public static final int SDL_AUDIO_ALLOW_CHANNELS_CHANGE = 0x00000004;
-    public static final int SDL_AUDIO_ALLOW_SAMPLES_CHANGE = 0x00000008;
-    public static final int SDL_AUDIO_ALLOW_ANY_CHANGE = SDL_AUDIO_ALLOW_FREQUENCY_CHANGE
-            | SDL_AUDIO_ALLOW_FORMAT_CHANGE
-            | SDL_AUDIO_ALLOW_CHANNELS_CHANGE
-            | SDL_AUDIO_ALLOW_SAMPLES_CHANGE;
-
-    public static final int SDL_MIX_MAXVOLUME = 128;
-
     private SdlAudio() {
     }
 
