@@ -4,7 +4,7 @@ import org.libsdl.api.rwops.SDL_RWops;
 import org.libsdl.api.touch.SDL_TouchID;
 import org.libsdl.jna.NativeLoader;
 
-public class SdlGesture {
+public final class SdlGesture {
 
     private SdlGesture() {
     }

@@ -5,7 +5,7 @@ import com.sun.jna.Pointer;
 
 import static org.libsdl.api.stdinc.SdlStdinc.SDL_Free;
 
-public class JnaUtils {
+public final class JnaUtils {
 
     private JnaUtils() {
     }

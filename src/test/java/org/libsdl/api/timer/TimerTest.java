@@ -18,7 +18,7 @@ import static org.libsdl.api.timer.SdlTimer.SDL_AddTimer;
 import static org.libsdl.api.timer.SdlTimer.SDL_GetTicks;
 import static org.libsdl.api.timer.SdlTimer.SDL_RemoveTimer;
 
-public class TimerTest {
+public final class TimerTest {
 
     private int numOfAllocationsBefore;
 

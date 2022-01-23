@@ -28,7 +28,7 @@ public final class SDL_Keymod implements JnaEnum {
     private SDL_Keymod() {
     }
 
-    public static class Ref extends IntByReference {
+    public static final class Ref extends IntByReference {
 
         public Ref() {
         }

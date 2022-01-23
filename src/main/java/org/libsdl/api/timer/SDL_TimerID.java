@@ -2,7 +2,7 @@ package org.libsdl.api.timer;
 
 import com.sun.jna.IntegerType;
 
-public class SDL_TimerID extends IntegerType {
+public final class SDL_TimerID extends IntegerType {
 
     @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_TimerID() {

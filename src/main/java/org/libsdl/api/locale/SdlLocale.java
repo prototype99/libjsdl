@@ -5,7 +5,7 @@ import java.util.List;
 import com.sun.jna.Pointer;
 import org.libsdl.jna.NativeLoader;
 
-public class SdlLocale {
+public final class SdlLocale {
 
     static {
         NativeLoader.registerNativeMethods(SdlLocale.class);

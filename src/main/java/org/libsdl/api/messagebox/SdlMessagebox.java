@@ -5,7 +5,7 @@ import org.intellij.lang.annotations.MagicConstant;
 import org.libsdl.api.video.SDL_Window;
 import org.libsdl.jna.NativeLoader;
 
-public class SdlMessagebox {
+public final class SdlMessagebox {
 
     private SdlMessagebox() {
     }

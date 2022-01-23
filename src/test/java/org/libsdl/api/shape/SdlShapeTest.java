@@ -35,7 +35,7 @@ import static org.libsdl.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
 import static org.libsdl.api.video.SdlVideo.SDL_DestroyWindow;
 import static org.libsdl.api.video.SdlVideo.SDL_WINDOWPOS_CENTERED;
 
-public class SdlShapeTest {
+public final class SdlShapeTest {
 
     @BeforeEach
     public void setUp() {

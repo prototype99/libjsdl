@@ -1,6 +1,6 @@
 package org.libsdl.api.keycode;
 
-public class SdlKeycode {
+public final class SdlKeycode {
 
     private SdlKeycode() {
     }

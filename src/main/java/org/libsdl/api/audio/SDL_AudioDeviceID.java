@@ -23,7 +23,7 @@ public class SDL_AudioDeviceID extends IntegerType {
         super(4, value);
     }
 
-    public void setValue(int value) {
+    public final void setValue(int value) {
         super.setValue(value);
     }
 }
