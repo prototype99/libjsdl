@@ -4,10 +4,12 @@ import com.sun.jna.IntegerType;
 
 public class SDL_TimerID extends IntegerType {
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_TimerID() {
         super(4);
     }
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_TimerID(int value) {
         super(4, value);
     }

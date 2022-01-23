@@ -35,6 +35,7 @@ public final class SdlRWopsTest {
     }
 
     @Test
+    @SuppressWarnings("checkstyle:MagicNumber")
     public void rwOpsShouldLoadFileContent() throws Exception {
         Path sampleFile = SdlTest.getSampleFile(this, "sample.txt");
         Memory buffer = new Memory(1024L);

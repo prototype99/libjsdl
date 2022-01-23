@@ -30,6 +30,7 @@ public class TimerTest {
     }
 
     @Test
+    @SuppressWarnings("checkstyle:MagicNumber")
     public void getTicksShouldReportTimeInMilliseconds() throws InterruptedException {
         int time1 = SDL_GetTicks();
         Thread.sleep(2500L);
@@ -40,6 +41,7 @@ public class TimerTest {
     }
 
     @Test
+    @SuppressWarnings("checkstyle:MagicNumber")
     public void timerShouldTriggerCallback() throws InterruptedException {
         AtomicInteger counter = new AtomicInteger(0);
         SDL_TimerCallback callbackHolder = (interval, param) -> {

@@ -34,6 +34,7 @@ public final class SdlTimer {
      * }
      * ```
      */
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static boolean SDL_TICKS_PASSED(int ticksCountA, int ticksCountB) {
         return (ticksCountB - ticksCountA) <= 0;
     }

@@ -44,6 +44,7 @@ public class SdlShapeTest {
 
     // TODO: Does not work
     @Test
+    @SuppressWarnings({"checkstyle:MagicNumber", "checkstyle:CyclomaticComplexity"})
     public void windowModeConstant() throws URISyntaxException {
         Path sampleFile = SdlTest.getSampleFile(this, "shape-24bit.bmp");
         SDL_Surface shape = SDL_LoadBMP(sampleFile.toString());

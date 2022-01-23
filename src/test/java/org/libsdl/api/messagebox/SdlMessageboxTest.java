@@ -31,6 +31,7 @@ class SdlMessageboxTest {
         assertEquals(result, 0);
     }
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public void fullMessageBoxShouldBeDisplayedEvenWithoutSdlInit() {
         SDL_MessageBoxData data = new SDL_MessageBoxData();
         data.flags = SDL_MESSAGEBOX_WARNING;

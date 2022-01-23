@@ -16,6 +16,7 @@ public final class SDL_WindowFlags implements JnaEnum {
     public static final int SDL_WINDOW_INPUT_GRABBED = SDL_WINDOW_MOUSE_GRABBED;
     public static final int SDL_WINDOW_INPUT_FOCUS = 0x00000200;
     public static final int SDL_WINDOW_MOUSE_FOCUS = 0x00000400;
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static final int SDL_WINDOW_FULLSCREEN_DESKTOP = SDL_WINDOW_FULLSCREEN | 0x00001000;
     public static final int SDL_WINDOW_FOREIGN = 0x00000800;
     public static final int SDL_WINDOW_ALLOW_HIGHDPI = 0x00002000;

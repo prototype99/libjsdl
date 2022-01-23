@@ -20,6 +20,7 @@ public final class SdlShape {
     private SdlShape() {
     }
 
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static boolean SDL_SHAPEMODEALPHA(
             @MagicConstant(valuesFromClass = WindowShapeMode.class) int mode) {
         return mode == ShapeModeDefault || mode == ShapeModeBinarizeAlpha || mode == ShapeModeReverseBinarizeAlpha;

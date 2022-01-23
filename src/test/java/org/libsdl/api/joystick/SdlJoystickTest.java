@@ -32,6 +32,7 @@ import static org.libsdl.api.joystick.SdlJoystick.SDL_NumJoysticks;
 
 public final class SdlJoystickTest {
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static void main(String[] args) throws InterruptedException {
         SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -96,6 +97,7 @@ public final class SdlJoystickTest {
         SDL_Quit();
     }
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     @Test
     public void guidConversionShouldWorkBothWays() {
         SDL_Init(0);

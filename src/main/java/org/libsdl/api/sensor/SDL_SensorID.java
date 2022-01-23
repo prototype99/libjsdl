@@ -13,6 +13,7 @@ public class SDL_SensorID extends IntegerType {
     /**
      * Create a zero-valued signed IntegerType.
      */
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_SensorID() {
         super(4);
     }
@@ -20,6 +21,7 @@ public class SDL_SensorID extends IntegerType {
     /**
      * Create a signed IntegerType with the given value.
      */
+    @SuppressWarnings("checkstyle:MagicNumber")
     public SDL_SensorID(int value) {
         super(4, value);
     }
