@@ -7,6 +7,9 @@ import org.libsdl.jna.NativeLoader;
 
 public class SdlMessagebox {
 
+    private SdlMessagebox() {
+    }
+
     public static int SDL_ShowMessageBox(
             SDL_MessageBoxData messageboxdata,
             IntByReference buttonid) {

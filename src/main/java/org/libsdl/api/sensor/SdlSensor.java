@@ -42,6 +42,9 @@ public final class SdlSensor {
      */
     public static final float SDL_STANDARD_GRAVITY = 9.80665f;
 
+    private SdlSensor() {
+    }
+
     /**
      * <p>Locking for multi-threaded access to the sensor API</p>
      *

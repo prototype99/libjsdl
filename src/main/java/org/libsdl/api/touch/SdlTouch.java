@@ -8,6 +8,9 @@ public final class SdlTouch {
     public static final int SDL_TOUCH_MOUSEID = -1;
     public static final long SDL_MOUSE_TOUCHID = -1;
 
+    private SdlTouch() {
+    }
+
     public static int SDL_GetNumTouchDevices() {
         return NativeFunctions.SDL_GetNumTouchDevices();
     }

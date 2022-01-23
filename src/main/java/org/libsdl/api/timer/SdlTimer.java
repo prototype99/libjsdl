@@ -5,6 +5,9 @@ import org.libsdl.jna.NativeLoader;
 
 public final class SdlTimer {
 
+    private SdlTimer() {
+    }
+
     /**
      * Get the number of milliseconds since SDL library initialization.
      *

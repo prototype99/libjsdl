@@ -14,6 +14,9 @@ import org.libsdl.jna.NativeLoader;
  */
 public final class SdlMetal {
 
+    private SdlMetal() {
+    }
+
     public static SDL_MetalView SDL_Metal_CreateView(SDL_Window window) {
         return NativeFunctions.SDL_Metal_CreateView(window);
     }

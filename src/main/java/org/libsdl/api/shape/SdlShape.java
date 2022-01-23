@@ -17,6 +17,9 @@ public final class SdlShape {
     public static final int SDL_INVALID_SHAPE_ARGUMENT = -2;
     public static final int SDL_WINDOW_LACKS_SHAPE = -3;
 
+    private SdlShape() {
+    }
+
     public static boolean SDL_SHAPEMODEALPHA(
             @MagicConstant(valuesFromClass = WindowShapeMode.class) int mode) {
         return mode == ShapeModeDefault || mode == ShapeModeBinarizeAlpha || mode == ShapeModeReverseBinarizeAlpha;
