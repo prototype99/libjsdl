@@ -37,6 +37,11 @@ import static org.libsdl.api.video.SdlVideo.SDL_WINDOWPOS_CENTERED;
 
 public final class SdlShapeTest {
 
+    private void printError(String e) {
+        System.out.println(e);
+        System.out.println(SDL_GetError());
+    }
+
     @BeforeEach
     public void setUp() {
         SDL_Init(SDL_INIT_VIDEO);
@@ -69,6 +74,8 @@ public final class SdlShapeTest {
         SDL_Event evt = new SDL_Event();
         while (shouldRun.get()) {
             while (SDL_PollEvent(evt) != 0) {
+                String nonshapeableString = "SDL_NONSHAPEABLE_WINDOW";
+                String unknownString = "UNKNOWN ERROR";
                 switch (evt.type) {
                     case SDL_QUIT:
                         shouldRun.set(false);
@@ -85,14 +92,11 @@ public final class SdlShapeTest {
                             shapeMode1.parameters.colorKey.a = (byte) 255;
                             int result = SDL_SetWindowShape(window, shape, shapeMode1);
                             if (result == SDL_INVALID_SHAPE_ARGUMENT) {
-                                System.out.println("SDL_INVALID_SHAPE_ARGUMENT");
-                                System.out.println(SDL_GetError());
+                                this.printError("SDL_INVALID_SHAPE_ARGUMENT");
                             } else if (result == SDL_NONSHAPEABLE_WINDOW) {
-                                System.out.println("SDL_NONSHAPEABLE_WINDOW");
-                                System.out.println(SDL_GetError());
+                                this.printError(nonshapeableString);
                             } else {
-                                System.out.println("UNKNOWN ERROR");
-                                System.out.println(SDL_GetError());
+                                this.printError(unknownString);
                             }
 
                             SDL_WindowShapeMode shapeMode2 = new SDL_WindowShapeMode();
@@ -101,14 +105,11 @@ public final class SdlShapeTest {
                                 System.out.println("Shape mode: " + shapeMode2.mode);
                                 System.out.println("Shape parameters: " + shapeMode2.parameters);
                             } else if (result2 == SDL_NONSHAPEABLE_WINDOW) {
-                                System.out.println("SDL_NONSHAPEABLE_WINDOW");
-                                System.out.println(SDL_GetError());
+                                this.printError(nonshapeableString);
                             } else if (result2 == SDL_WINDOW_LACKS_SHAPE) {
-                                System.out.println("SDL_WINDOW_LACKS_SHAPE");
-                                System.out.println(SDL_GetError());
+                                this.printError("SDL_WINDOW_LACKS_SHAPE");
                             } else {
-                                System.out.println("UNKNOWN ERROR");
-                                System.out.println(SDL_GetError());
+                                this.printError(unknownString);
                             }
                         }
                         break;

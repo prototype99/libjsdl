@@ -59,12 +59,20 @@ class SdlMessageboxTest {
         int result = SDL_ShowMessageBox(data, clickedButtonRef);
 
         assertEquals(result, 0, "Error in SDL call: " + SdlError.SDL_GetError());
+        boolean known = false;
+        String clickedButtonString = "An Unknown";
         if (clickedButtonRef.getValue() == 999) {
-            System.out.println("User clicked Yes (" + clickedButtonRef.getValue() + ")");
+            clickedButtonString = button1.text;
+            known = true;
         } else if (clickedButtonRef.getValue() == 5555) {
-            System.out.println("User clicked No (" + clickedButtonRef.getValue() + ")");
+            clickedButtonString = button2.text;
+            known = true;
+        }
+        clickedButtonString = "User clicked " + clickedButtonString + " on the message box (" + clickedButtonRef.getValue() + ")";
+        if (known) {
+            System.out.println(clickedButtonString);
         } else {
-            throw new AssertionError("Failed to check which button was clicked on the message box (" + clickedButtonRef.getValue() + ")");
+            throw new AssertionError(clickedButtonString);
         }
     }
 }

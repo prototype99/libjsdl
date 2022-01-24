@@ -25,19 +25,26 @@ import static org.libsdl.api.stdinc.SdlStdinc.SDL_GetNumAllocations;
 
 public final class SdlRWopsTest {
 
+    String sampleFileName = "sample.txt";
+
     @BeforeEach
     public void setUp() {
         SDL_Init(SDL_INIT_VIDEO);
     }
 
+    private SDL_RWops rwOpsOpenFile(Path sampleFile) {
+        SDL_RWops ops = SDL_RWFromFile(sampleFile.toString(), "rb");
+        assertNotNull(ops, "Opening file " + sampleFile + " failed: " + SDL_GetError());
+        return ops;
+    }
+
     @Test
     @SuppressWarnings("checkstyle:MagicNumber")
     public void rwOpsShouldLoadFileContent() throws Exception {
-        Path sampleFile = SdlTest.getSampleFile(this, "sample.txt");
+        Path sampleFile = SdlTest.getSampleFile(this, this.sampleFileName);
         Memory buffer = new Memory(1024L);
 
-        SDL_RWops ops = SDL_RWFromFile(sampleFile.toString(), "rb");
-        assertNotNull(ops, "Opening file " + sampleFile + " failed: " + SDL_GetError());
+        SDL_RWops ops = this.rwOpsOpenFile(sampleFile);
         try {
             SDL_RWReadFunction readFunction = ops.read;
             SizeT actualReadCount = readFunction.read(ops, buffer, new SizeT(1L), new SizeT(buffer.size()));
@@ -58,10 +65,9 @@ public final class SdlRWopsTest {
 
     @Test
     public void rwOpsShouldReportCorrectFileSize() throws Exception {
-        Path sampleFile = SdlTest.getSampleFile(this, "sample.txt");
+        Path sampleFile = SdlTest.getSampleFile(this, this.sampleFileName);
 
-        SDL_RWops ops = SDL_RWFromFile(sampleFile.toString(), "rb");
-        assertNotNull(ops, "Opening file " + sampleFile + " failed: " + SDL_GetError());
+        SDL_RWops ops = this.rwOpsOpenFile(sampleFile);
         try {
             SDL_RWSizeFunction readFunction = ops.size;
             long actualFileSize = readFunction.size(ops);
@@ -73,11 +79,10 @@ public final class SdlRWopsTest {
     }
 
     @Test
-    public void LoadFileUsingRwOpsShouldGiveFileContent() throws Exception {
-        Path sampleFile = SdlTest.getSampleFile(this, "sample.txt");
+    public void loadFileUsingRwOpsShouldGiveFileContent() throws Exception {
+        Path sampleFile = SdlTest.getSampleFile(this, this.sampleFileName);
 
-        SDL_RWops ops = SDL_RWFromFile(sampleFile.toString(), "rb");
-        assertNotNull(ops, "Opening file " + sampleFile + " failed: " + SDL_GetError());
+        SDL_RWops ops = this.rwOpsOpenFile(sampleFile);
         SizeT.Ref actualReadCount = new SizeT.Ref();
         Pointer buffer = SDL_LoadFile_RW(ops, actualReadCount, 1);
 
@@ -93,8 +98,8 @@ public final class SdlRWopsTest {
     }
 
     @Test
-    public void LoadFileShouldGiveFileContent() throws Exception {
-        Path sampleFile = SdlTest.getSampleFile(this, "sample.txt");
+    public void loadFileShouldGiveFileContent() throws Exception {
+        Path sampleFile = SdlTest.getSampleFile(this, this.sampleFileName);
         int allocCount = SDL_GetNumAllocations();
 
         SizeT.Ref actualReadCount = new SizeT.Ref();
