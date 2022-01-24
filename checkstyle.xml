@@ -108,7 +108,9 @@
         <module name="ClassDataAbstractionCoupling"/>
         <module name="ClassFanOutComplexity"/>
         <module name="CyclomaticComplexity"/>
-        <module name="JavaNCSS"/>
+        <module name="JavaNCSS">
+            <property name="methodMaximum" value="64"/>
+        </module>
         <module name="NPathComplexity"/>
 
         <!-- Miscellaneous -->
@@ -150,7 +152,9 @@
 
         <!-- Size Violations -->
         <module name="AnonInnerLength" />
-        <module name="ExecutableStatementCount"/>
+        <module name="ExecutableStatementCount">
+            <property name="max" value="63"/>
+        </module>
         <module name="MethodCount"/>
         <module name="MethodLength"/>
         <module name="OuterTypeNumber"/>
