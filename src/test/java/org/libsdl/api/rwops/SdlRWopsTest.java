@@ -20,8 +20,8 @@ import static org.libsdl.api.rwops.SdlRWops.SDL_LoadFile;
 import static org.libsdl.api.rwops.SdlRWops.SDL_LoadFile_RW;
 import static org.libsdl.api.rwops.SdlRWops.SDL_RWFromFile;
 import static org.libsdl.api.rwops.SdlRWops.SDL_RWclose;
-import static org.libsdl.api.stdinc.SdlStdinc.SDL_GetNumAllocations;
 import static org.libsdl.api.stdinc.SdlStdinc.SDL_Free;
+import static org.libsdl.api.stdinc.SdlStdinc.SDL_GetNumAllocations;
 
 public final class SdlRWopsTest {
 

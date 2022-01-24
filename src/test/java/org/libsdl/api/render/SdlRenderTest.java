@@ -1,8 +1,8 @@
 package org.libsdl.api.render;
 
 import org.junit.jupiter.api.Test;
-import org.libsdl.api.Sdl;
 import org.libsdl.api.SDL_SubSystem;
+import org.libsdl.api.Sdl;
 
 public final class SdlRenderTest {
 
