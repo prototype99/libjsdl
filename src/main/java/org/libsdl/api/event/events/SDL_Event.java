@@ -12,6 +12,7 @@ import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERBUTTONUP;
 import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERDEVICEADDED;
 import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERDEVICEREMAPPED;
 import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERDEVICEREMOVED;
+import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERSENSORUPDATE;
 import static org.libsdl.api.event.SdlEvents.SDL_DOLLARGESTURE;
 import static org.libsdl.api.event.SdlEvents.SDL_DOLLARRECORD;
 import static org.libsdl.api.event.SdlEvents.SDL_DROPBEGIN;
@@ -76,6 +77,7 @@ public final class SDL_Event extends Union {
     public SDL_ControllerAxisEvent caxis;
     public SDL_ControllerButtonEvent cbutton;
     public SDL_ControllerDeviceEvent cdevice;
+    public SDL_ControllerSensorEvent csensor;
     public SDL_AudioDeviceEvent adevice;
     public SDL_QuitEvent quit;
     public SDL_UserEvent user;
@@ -146,6 +148,9 @@ public final class SDL_Event extends Union {
             case SDL_CONTROLLERDEVICEREMOVED:
             case SDL_CONTROLLERDEVICEREMAPPED:
                 setType(SDL_ControllerDeviceEvent.class);
+                break;
+            case SDL_CONTROLLERSENSORUPDATE:
+                setType(SDL_ControllerSensorEvent.class);
                 break;
             case SDL_FINGERMOTION:
             case SDL_FINGERDOWN:
