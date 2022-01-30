@@ -51,6 +51,14 @@ public final class SdlEvents {
     public static final int SDL_CONTROLLERDEVICEADDED = 0x653;
     public static final int SDL_CONTROLLERDEVICEREMOVED = 0x654;
     public static final int SDL_CONTROLLERDEVICEREMAPPED = 0x655;
+    //< Game controller touchpad was touched
+    public static final int SDL_CONTROLLERTOUCHPADDOWN = 0x656;
+    //< Game controller touchpad finger was moved
+    public static final int SDL_CONTROLLERTOUCHPADMOTION = 0x657;
+    //< Game controller touchpad finger was lifted
+    public static final int SDL_CONTROLLERTOUCHPADUP = 0x658;
+    //< Game controller sensor was updated
+    public static final int SDL_CONTROLLERSENSORUPDATE = 0x659;
 
     public static final int SDL_FINGERDOWN = 0x700;
     public static final int SDL_FINGERUP = 0x701;
