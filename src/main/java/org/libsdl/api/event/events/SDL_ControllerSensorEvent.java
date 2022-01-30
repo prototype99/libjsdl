@@ -24,5 +24,5 @@ public final class SDL_ControllerSensorEvent extends Structure {
     //< The type of the sensor, one of the values of ::SDL_SensorType
     public int sensor;
     //< Up to 3 values from the sensor, as defined in SDL_sensor.h
-    public float[] data;
+    public float[] data = {0, 0, 0};
 }
