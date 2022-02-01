@@ -3,9 +3,6 @@ package org.libsdl.api.event.events;
 import com.sun.jna.Structure;
 
 @Structure.FieldOrder({
-        "type",
-        "timestamp",
-        "windowID",
         "event",
         "padding1",
         "padding2",
@@ -13,15 +10,13 @@ import com.sun.jna.Structure;
         "data1",
         "data2"
 })
-public final class SDL_WindowEvent extends Structure {
-
-    public int type;
-    public int timestamp;
-    public int windowID;
+//Window state change event data (event.window.*)
+public final class SDL_WindowEvent extends SDL_CommonWindowEvent {
     public byte event;
     public byte padding1;
     public byte padding2;
     public byte padding3;
+    /** event dependent data */
     public int data1;
     public int data2;
 }

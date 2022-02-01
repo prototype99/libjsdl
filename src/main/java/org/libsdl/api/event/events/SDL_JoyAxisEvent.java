@@ -1,12 +1,8 @@
 package org.libsdl.api.event.events;
 
-import com.sun.jna.NativeLong;
 import com.sun.jna.Structure;
 
 @Structure.FieldOrder({
-        "type",
-        "timestamp",
-        "which",
         "axis",
         "padding1",
         "padding2",
@@ -14,15 +10,14 @@ import com.sun.jna.Structure;
         "value",
         "padding4"
 })
-public final class SDL_JoyAxisEvent extends Structure {
-
-    public int type;
-    public int timestamp;
-    public NativeLong which;
-    public byte axis;
+//Joystick axis motion event structure (event.jaxis.*)
+public class SDL_JoyAxisEvent extends SDL_JoyDeviceEvent {
+    //The axis
+    public int axis;
     public byte padding1;
     public byte padding2;
     public byte padding3;
+    //The axis value (range: -32768 to 32767)
     public short value;
     public short padding4;
 }

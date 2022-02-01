@@ -3,25 +3,22 @@ package org.libsdl.api.event.events;
 import com.sun.jna.Structure;
 
 @Structure.FieldOrder({
-        "type",
-        "timestamp",
-        "windowID",
-        "which",
         "state",
         "x",
         "y",
         "xrel",
         "yrel"
 })
-public final class SDL_MouseMotionEvent extends Structure {
-
-    public int type;
-    public int timestamp;
-    public int windowID;
-    public int which;
+//Mouse motion event structure (event.motion.*)
+public final class SDL_MouseMotionEvent extends SDL_CommonWindowWhichEvent {
+    //The current button state
     public int state;
+    //X coordinate, relative to window
     public int x;
+    //Y coordinate, relative to window
     public int y;
+    //The relative motion in the X direction
     public int xrel;
+    //The relative motion in the Y direction
     public int yrel;
 }

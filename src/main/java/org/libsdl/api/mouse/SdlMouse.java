@@ -119,11 +119,57 @@ public final class SdlMouse {
 
         public static native SDL_Window SDL_GetMouseFocus();
 
+        /**
+         * <p>Retrieve the current state of the mouse.</p>
+         *
+         * <p>The current button state is returned as a button bitmask, which can be
+         * tested using the {@code SDL_BUTTON(X)} macros (where {@code X} is generally 1 for the
+         * left, 2 for middle, 3 for the right button), and {@code x} and {@code y} are set to the
+         * mouse cursor position relative to the focus window. You can pass NULL for
+         * either {@code x} or {@code y}.</p>
+         *
+         * @param x the x coordinate of the mouse cursor position relative to the
+         *          focus window
+         * @param y the y coordinate of the mouse cursor position relative to the
+         *          focus window
+         * @return a 32-bit button bitmask of the current button state.
+         *
+         * @see #SDL_GetGlobalMouseState
+         * @see #SDL_GetRelativeMouseState
+         * @see #SDL_PumpEvents
+         */
         @MagicConstant(flagsFromClass = SdlMouse.class)
         public static native int SDL_GetMouseState(
                 IntByReference x,
                 IntByReference y);
 
+        /**
+         * <p>Get the current state of the mouse in relation to the desktop.</p>
+         *
+         * <p>This works similarly to SDL_GetMouseState(), but the coordinates will be
+         * reported relative to the top-left of the desktop. This can be useful if you
+         * need to track the mouse outside of a specific window and SDL_CaptureMouse()
+         * doesn't fit your needs. For example, it could be useful if you need to
+         * track the mouse while dragging a window, where coordinates relative to a
+         * window might not be in sync at all times.</p>
+         *
+         * <p>Note: SDL_GetMouseState() returns the mouse position as SDL understands it
+         * from the last pump of the event queue. This function, however, queries the
+         * OS for the current mouse position, and as such, might be a slightly less
+         * efficient function. Unless you know what you're doing and have a good
+         * reason to use this function, you probably want SDL_GetMouseState() instead.</p>
+         *
+         * @param x filled in with the current X coord relative to the desktop; can be
+         *          NULL
+         * @param y filled in with the current Y coord relative to the desktop; can be
+         *          NULL
+         * @return the current button state as a bitmask which can be tested using
+         *         the SDL_BUTTON(X) macros.
+         *
+         * @since This function is available since SDL 2.0.4.
+         *
+         * @see #SDL_CaptureMouse
+         */
         @MagicConstant(flagsFromClass = SdlMouse.class)
         public static native int SDL_GetGlobalMouseState(
                 IntByReference x,

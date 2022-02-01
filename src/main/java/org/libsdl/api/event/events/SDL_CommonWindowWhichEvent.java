@@ -3,8 +3,8 @@ package org.libsdl.api.event.events;
 import com.sun.jna.Structure;
 
 @Structure.FieldOrder("which")
-//Joystick device event structure (event.jdevice.*)
-public class SDL_JoyDeviceEvent extends SDL_CommonEvent {
+//Fields shared by every event
+public class SDL_CommonWindowWhichEvent extends SDL_CommonWindowEvent {
     /** The associated instance ID */
     public int which;
 }

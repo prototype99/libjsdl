@@ -6,8 +6,9 @@ import com.sun.jna.Structure;
         "type",
         "timestamp"
 })
-public final class SDL_CommonEvent extends Structure {
-
+//Fields shared by every event
+public class SDL_CommonEvent extends Structure {
     public int type;
+    //In milliseconds, populated using SDL_GetTicks()
     public int timestamp;
 }

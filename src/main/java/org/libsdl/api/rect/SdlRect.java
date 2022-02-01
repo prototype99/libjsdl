@@ -15,6 +15,9 @@ public final class SdlRect {
     private SdlRect() {
     }
 
+    /**
+     * Returns true if point resides inside a rectangle.
+     */
     public static boolean SDL_PointInRect(
             SDL_Point p,
             SDL_Rect r) {

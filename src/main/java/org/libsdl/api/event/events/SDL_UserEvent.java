@@ -4,18 +4,13 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 
 @Structure.FieldOrder({
-        "type",
-        "timestamp",
-        "windowID",
         "code",
         "data1",
         "data2"
 })
-public final class SDL_UserEvent extends Structure {
-
-    public int type;
-    public int timestamp;
-    public int windowID;
+//A user-defined event type (event.user.*)
+public final class SDL_UserEvent extends SDL_CommonWindowEvent {
+    //User defined event code
     public int code;
     public Pointer data1;
     public Pointer data2;

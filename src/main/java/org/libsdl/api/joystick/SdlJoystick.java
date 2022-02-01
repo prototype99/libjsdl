@@ -217,6 +217,27 @@ public final class SdlJoystick {
         NativeFunctions.SDL_JoystickUpdate();
     }
 
+    /**
+     * <p>Enable/disable joystick event polling.</p>
+     *
+     * <p>If joystick events are disabled, you must call SDL_JoystickUpdate()
+     * yourself and manually check the state of the joystick when you want
+     * joystick information.</p>
+     *
+     * <p>It is recommended that you leave joystick event handling enabled.</p>
+     *
+     * <p><b>WARNING</b>: Calling this function may delete all events currently in SDL's
+     * event queue.</p>
+     *
+     * @param state can be one of {@code SDL_QUERY}, {@code SDL_IGNORE}, or {@code SDL_ENABLE}
+     * @return 1 if enabled, 0 if disabled, or a negative error code on failure;
+     *         call SDL_GetError() for more information.
+     *
+     *         If {@code state} is {@code SDL_QUERY} then the current state is returned,
+     *         otherwise the new processing state is returned.
+     *
+     * @see #SDL_GameControllerEventState
+     */
     public static int SDL_JoystickEventState(int state) {
         return NativeFunctions.SDL_JoystickEventState(state);
     }

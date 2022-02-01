@@ -1,12 +1,8 @@
 package org.libsdl.api.event.events;
 
-import com.sun.jna.NativeLong;
 import com.sun.jna.Structure;
 
 @Structure.FieldOrder({
-        "type",
-        "timestamp",
-        "touchId",
         "dTheta",
         "dDist",
         "x",
@@ -14,11 +10,8 @@ import com.sun.jna.Structure;
         "numFingers",
         "padding"
 })
-public final class SDL_MultiGestureEvent extends Structure {
-
-    public int type;
-    public int timestamp;
-    public NativeLong touchId;
+//Multiple Finger Gesture Event (event.mgesture.*)
+public final class SDL_MultiGestureEvent extends SDL_CommonTouchIdEvent {
     public float dTheta;
     public float dDist;
     public float x;

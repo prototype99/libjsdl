@@ -13,6 +13,10 @@ import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERDEVICEADDED;
 import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERDEVICEREMAPPED;
 import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERDEVICEREMOVED;
 import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERSENSORUPDATE;
+import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERTOUCHPADDOWN;
+import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERTOUCHPADMOTION;
+import static org.libsdl.api.event.SdlEvents.SDL_CONTROLLERTOUCHPADUP;
+import static org.libsdl.api.event.SdlEvents.SDL_DISPLAYEVENT;
 import static org.libsdl.api.event.SdlEvents.SDL_DOLLARGESTURE;
 import static org.libsdl.api.event.SdlEvents.SDL_DOLLARRECORD;
 import static org.libsdl.api.event.SdlEvents.SDL_DROPBEGIN;
@@ -39,6 +43,7 @@ import static org.libsdl.api.event.SdlEvents.SDL_MULTIGESTURE;
 import static org.libsdl.api.event.SdlEvents.SDL_QUIT;
 import static org.libsdl.api.event.SdlEvents.SDL_RENDER_DEVICE_RESET;
 import static org.libsdl.api.event.SdlEvents.SDL_RENDER_TARGETS_RESET;
+import static org.libsdl.api.event.SdlEvents.SDL_SENSORUPDATE;
 import static org.libsdl.api.event.SdlEvents.SDL_SYSWMEVENT;
 import static org.libsdl.api.event.SdlEvents.SDL_TEXTEDITING;
 import static org.libsdl.api.event.SdlEvents.SDL_TEXTINPUT;
@@ -62,6 +67,7 @@ public final class SDL_Event extends Union {
 
     public int type;
     public SDL_CommonEvent common;
+    public SDL_DisplayEvent display;
     public SDL_WindowEvent window;
     public SDL_KeyboardEvent key;
     public SDL_TextEditingEvent edit;
@@ -77,6 +83,7 @@ public final class SDL_Event extends Union {
     public SDL_ControllerAxisEvent caxis;
     public SDL_ControllerButtonEvent cbutton;
     public SDL_ControllerDeviceEvent cdevice;
+    public SDL_ControllerTouchpadEvent ctouchpad;
     public SDL_ControllerSensorEvent csensor;
     public SDL_AudioDeviceEvent adevice;
     public SDL_QuitEvent quit;
@@ -94,6 +101,9 @@ public final class SDL_Event extends Union {
         switch (type) {
             case SDL_QUIT:
                 setType(SDL_QuitEvent.class);
+                break;
+            case SDL_DISPLAYEVENT:
+                setType(SDL_DisplayEvent.class);
                 break;
             case SDL_WINDOWEVENT:
                 setType(SDL_WindowEvent.class);
@@ -149,6 +159,11 @@ public final class SDL_Event extends Union {
             case SDL_CONTROLLERDEVICEREMAPPED:
                 setType(SDL_ControllerDeviceEvent.class);
                 break;
+            case SDL_CONTROLLERTOUCHPADDOWN:
+            case SDL_CONTROLLERTOUCHPADMOTION:
+            case SDL_CONTROLLERTOUCHPADUP:
+                setType(SDL_ControllerTouchpadEvent.class);
+                break;
             case SDL_CONTROLLERSENSORUPDATE:
                 setType(SDL_ControllerSensorEvent.class);
                 break;
@@ -176,6 +191,9 @@ public final class SDL_Event extends Union {
             case SDL_AUDIODEVICEADDED:
             case SDL_AUDIODEVICEREMOVED:
                 setType(SDL_AudioDeviceEvent.class);
+                break;
+            case SDL_SENSORUPDATE:
+                setType(SDL_SensorEvent.class);
                 break;
             case SDL_RENDER_TARGETS_RESET:
             case SDL_RENDER_DEVICE_RESET:

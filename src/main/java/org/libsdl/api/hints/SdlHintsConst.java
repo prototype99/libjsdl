@@ -154,6 +154,16 @@ public final class SdlHintsConst {
 
     public static final String SDL_HINT_RENDER_OPENGL_SHADERS = "SDL_RENDER_OPENGL_SHADERS";
 
+    /**
+     *  <p>A variable controlling the scaling quality</p>
+     *
+     *  <p>This variable can be set to the following values:<br>
+     *    <blockquote>"0" or "nearest" - Nearest pixel sampling</blockquote>
+     *    <blockquote>"1" or "linear"  - Linear filtering (supported by OpenGL and Direct3D)</blockquote>
+     *    <blockquote>"2" or "best"    - Currently this is the same as "linear"</blockquote></p>
+     *
+     *  <p>By default nearest pixel sampling is used</p>
+     */
     public static final String SDL_HINT_RENDER_SCALE_QUALITY = "SDL_RENDER_SCALE_QUALITY";
 
     public static final String SDL_HINT_RENDER_VSYNC = "SDL_RENDER_VSYNC";

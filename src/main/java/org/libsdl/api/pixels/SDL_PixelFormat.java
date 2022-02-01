@@ -25,6 +25,9 @@ import org.intellij.lang.annotations.MagicConstant;
         "refcount",
         "next"
 })
+/**
+ * @apiNote Everything in the pixel format structure is read-only.
+ */
 public class SDL_PixelFormat extends Structure {
 
     // TODO: Check suspicious padding
