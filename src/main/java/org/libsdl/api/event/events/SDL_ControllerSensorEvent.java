@@ -20,7 +20,7 @@ public final class SDL_ControllerSensorEvent extends Structure {
     //< In milliseconds, populated using SDL_GetTicks()
     public int timestamp;
     //< The joystick instance id
-    public NativeLong which;
+    public int which;
     //< The type of the sensor, one of the values of ::SDL_SensorType
     public int sensor;
     //< Up to 3 values from the sensor, as defined in SDL_sensor.h
