@@ -1,0 +1,9 @@
+[remote "upstream"]
+	url = git@github.com:shinedeveloper/libsdl4j.git
+	fetch = +refs/heads/*:refs/remotes/upstream/*
+[remote "FMudanyali"]
+	url = git@github.com:FMudanyali/libjsdl.git
+	fetch = +refs/heads/*:refs/remotes/FMudanyali/*
+[remote "libjavasdl"]
+	url = git@github.com:parhelia512/libjavasdl.git
+	fetch = +refs/heads/*:refs/remotes/libjavasdl/*
